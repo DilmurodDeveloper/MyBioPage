@@ -1,0 +1,205 @@
+﻿body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to right, #1e215d, #a11963);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 20px;
+}
+
+.main-container {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.profile-left .profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 4px solid white;
+}
+
+.profile-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.name {
+    font-size: 28px;
+    margin: 0 0 10px;
+    font-weight: bold;
+}
+
+.location,
+.profession {
+    font-size: 16px;
+    margin: 4px 0;
+    color: #ddd;
+}
+
+.social-buttons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 15px;
+    max-width: 800px;
+    width: 100%;
+}
+
+.social-btn {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    align-items: center;
+    justify-content: center;
+    height: 70px;
+    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 14px;
+    font-size: clamp(15px, 2vw, 18px);
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+    .social-btn img {
+        justify-self: center;
+        width: 32px;
+        height: 32px;
+    }
+
+    .social-btn span {
+        justify-self: start;
+        text-align: start;
+    }
+
+#play-voice-btn {
+    margin: 20px;
+    padding: 12px 30px;
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(270deg, #ff416c, #ff4b2b, #ff416c);
+    background-size: 600% 600%;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(255, 75, 43, 0.7);
+    animation: glowing 3s ease infinite;
+    transition: box-shadow 0.3s ease;
+}
+
+    #play-voice-btn:hover {
+        box-shadow: 0 0 25px rgba(255, 75, 43, 1);
+    }
+
+@keyframes glowing {
+    0% {
+        background-position: 0% 50%;
+        box-shadow: 0 0 5px rgba(255, 75, 43, 0.6);
+    }
+
+    50% {
+        background-position: 100% 50%;
+        box-shadow: 0 0 20px rgba(255, 75, 43, 1);
+    }
+
+    100% {
+        background-position: 0% 50%;
+        box-shadow: 0 0 5px rgba(255, 75, 43, 0.6);
+    }
+}
+
+/* Responsiv dizayn */
+@media (max-width: 768px) {
+    body {
+        padding: 40px 10px;
+    }
+
+    .main-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile-pic {
+        width: 130px;
+        height: 130px;
+    }
+
+    .social-buttons {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 12px;
+    }
+
+    .social-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        height: 64px;
+        padding: 12px 20px;
+        font-size: clamp(17px, 2vw, 20px);
+    }
+
+        .social-btn img {
+            width: 28px;
+            height: 28px;
+        }
+
+        .social-btn span {
+            flex-grow: 1;
+            text-align: start;
+        }
+
+    #play-voice-btn {
+        font-size: 14px;
+        width: 90%;
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-pic {
+        width: 100px;
+        height: 100px;
+    }
+
+    .social-buttons {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .social-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        height: 45px;
+        padding: 6px 30px;
+        font-size: 18px;
+    }
+
+        .social-btn img {
+            padding-left: 2rem;
+            width: 40px;
+            height: 40px;
+        }
+
+        .social-btn span {
+            flex-grow: 1;
+            padding-left: 2rem;
+            text-align: start;
+        }
+
+    #play-voice-btn {
+        font-size: 13px;
+        padding: 8px 16px;
+        width: 70%;
+    }
+}

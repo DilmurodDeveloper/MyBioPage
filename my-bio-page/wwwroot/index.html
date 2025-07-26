@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dilmurod | .NET Developer</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+</head>
+<body>
+    <div class="main-container">
+        <div class="profile-left">
+            <img src="images/profile.jpg" alt="Dilmurod" class="profile-pic" />
+        </div>
+
+        <div class="profile-right">
+            <h1 class="name">Dilmurod Madirimov</h1>
+            <p class="location"><i class="fa-solid fa-location-dot"></i> Khazorasp, Uzbekistan</p>
+            <p class="profession"><i class="fa-solid fa-laptop"></i> Software Engineer | .NET Backend Developer</p>
+        </div>
+    </div>
+    <button id="play-voice-btn"><i class="fa-solid fa-microphone"></i> TINGLASH UCHUN BOSING</button>
+
+    <div class="social-buttons">
+        <a href="https://github.com/DilmurodDeveloper" target="_blank" class="social-btn github">
+            <img src="https://img.icons8.com/color/48/github--v1.png" />
+            <span>GitHub</span>
+        </a>
+        <a href="https://linkedin.com/in/dilmurodmadirimov" target="_blank" class="social-btn linkedin">
+            <img src="https://img.icons8.com/color/48/linkedin.png" />
+            <span>LinkedIn</span>
+        </a>
+        <a href="https://leetcode.com/u/DilmurodDeveloper" target="_blank" class="social-btn leetcode">
+            <img src="https://img.icons8.com/external-tal-revivo-shadow-tal-revivo/24/ffffff/external-level-up-your-coding-skills-and-quickly-land-a-job-logo-shadow-tal-revivo.png" />
+            <span>LeetCode</span>
+        </a>
+        <a href="https://t.me/DilmurodDeveloper" target="_blank" class="social-btn telegram">
+            <img src="https://img.icons8.com/color/48/telegram-app--v1.png" />
+            <span>Telegram</span>
+        </a>
+        <a href="https://wa.me/998991437101" target="_blank" class="social-btn whatsapp">
+            <img src="https://img.icons8.com/color/48/whatsapp--v1.png" />
+            <span>WhatsApp</span>
+        </a>
+        <a href="https://twitter.com/dilmurodmadirimov" target="_blank" class="social-btn twitter">
+            <img src="https://img.icons8.com/color/48/twitter--v1.png" />
+            <span>Twitter</span>
+        </a>
+        <a href="https://facebook.com/dilmurod.dev" target="_blank" class="social-btn facebook">
+            <img src="https://img.icons8.com/color/48/facebook-new.png" />
+            <span>Facebook</span>
+        </a>
+        <a href="https://instagram.com/dilmurod_developer" target="_blank" class="social-btn instagram">
+            <img src="https://img.icons8.com/color/48/instagram-new--v1.png" />
+            <span>Instagram</span>
+        </a>
+        <a href="https://t.me/Dilmurod_Csharp" target="_blank" class="social-btn telegram">
+            <img src="https://img.icons8.com/color/48/telegram-app--v1.png" />
+            <span>My Blog</span>
+        </a>
+    </div>
+
+    <script>
+        document.getElementById('play-voice-btn').addEventListener('click', () => {
+            const msg = new SpeechSynthesisUtterance('Salom! Men Dilmurod, .NET backend dasturchisiman.');
+            msg.lang = 'uz-UZ';
+            window.speechSynthesis.speak(msg);
+        });
+    </script>
+</body>
+</html>
