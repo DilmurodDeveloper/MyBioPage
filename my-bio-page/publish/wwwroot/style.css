@@ -32,6 +32,7 @@ html, body {
 
 /* Main container */
 .main-container {
+    position: relative;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -42,16 +43,19 @@ html, body {
     box-shadow: 0 8px 24px transparent;
     max-width: 50%;
     margin: 0 auto 10px auto;
+    z-index: 1;
 }
 
 /* Profile Left */
 .profile-left .profile-pic {
+    position: relative;
     width: 150px;
     height: 150px;
     object-fit: cover;
     border-radius: 50%;
     border: 5px solid #4ca1af;
     box-shadow: 0 0 12px rgba(0,0,0,0.2);
+    z-index: 2;
 }
 
 /* Profile Right */
