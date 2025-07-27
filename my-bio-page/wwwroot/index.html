@@ -4,10 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dilmurod | .NET Developer</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
     <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
 </head>
 <body>
+    <div id="particles-js"></div>
     <div class="main-container">
         <div class="profile-left">
             <img src="images/profile.jpg" alt="Dilmurod" class="profile-pic" />
@@ -15,56 +21,117 @@
 
         <div class="profile-right">
             <h1 class="name">Dilmurod Madirimov</h1>
-            <p class="location"><i class="fa-solid fa-location-dot"></i> Khazorasp, Uzbekistan</p>
+            <p class="location"><i class="fa-solid fa-location-dot"></i> Khazarasp, Uzbekistan</p>
             <p class="profession"><i class="fa-solid fa-laptop"></i> Software Engineer | .NET Backend Developer</p>
         </div>
     </div>
-    <button id="play-voice-btn"><i class="fa-solid fa-microphone"></i> TINGLASH UCHUN BOSING</button>
 
     <div class="social-buttons">
-        <a href="https://github.com/DilmurodDeveloper" target="_blank" class="social-btn github">
-            <img src="https://img.icons8.com/color/48/github--v1.png" />
-            <span>GitHub</span>
-        </a>
-        <a href="https://linkedin.com/in/dilmurodmadirimov" target="_blank" class="social-btn linkedin">
-            <img src="https://img.icons8.com/color/48/linkedin.png" />
-            <span>LinkedIn</span>
-        </a>
-        <a href="https://leetcode.com/u/DilmurodDeveloper" target="_blank" class="social-btn leetcode">
-            <img src="https://img.icons8.com/external-tal-revivo-shadow-tal-revivo/24/ffffff/external-level-up-your-coding-skills-and-quickly-land-a-job-logo-shadow-tal-revivo.png" />
-            <span>LeetCode</span>
-        </a>
-        <a href="https://t.me/DilmurodDeveloper" target="_blank" class="social-btn telegram">
-            <img src="https://img.icons8.com/color/48/telegram-app--v1.png" />
-            <span>Telegram</span>
-        </a>
-        <a href="https://wa.me/998991437101" target="_blank" class="social-btn whatsapp">
-            <img src="https://img.icons8.com/color/48/whatsapp--v1.png" />
-            <span>WhatsApp</span>
+        <a href="https://instagram.com/dilmurod_developer" target="_blank" class="social-btn instagram">
+            <img src="https://img.icons8.com/color/48/instagram-new--v1.png" />
+            <div class="divider"></div>
+            <span>Instagram</span>
         </a>
         <a href="https://twitter.com/dilmurodmadirimov" target="_blank" class="social-btn twitter">
             <img src="https://img.icons8.com/color/48/twitter--v1.png" />
+            <div class="divider"></div>
             <span>Twitter</span>
         </a>
         <a href="https://facebook.com/dilmurod.dev" target="_blank" class="social-btn facebook">
             <img src="https://img.icons8.com/color/48/facebook-new.png" />
+            <div class="divider"></div>
             <span>Facebook</span>
         </a>
-        <a href="https://instagram.com/dilmurod_developer" target="_blank" class="social-btn instagram">
-            <img src="https://img.icons8.com/color/48/instagram-new--v1.png" />
-            <span>Instagram</span>
+        <a href="https://linkedin.com/in/dilmurodmadirimov" target="_blank" class="social-btn linkedin">
+            <img src="https://img.icons8.com/color/48/linkedin.png" />
+            <div class="divider"></div>
+            <span>LinkedIn</span>
+        </a>
+        <a href="https://github.com/DilmurodDeveloper" target="_blank" class="social-btn github">
+            <img src="https://img.icons8.com/color/48/github--v1.png" />
+            <div class="divider"></div>
+            <span>GitHub</span>
+        </a>
+        <a href="https://t.me/DilmurodDeveloper" target="_blank" class="social-btn telegram">
+            <img src="https://img.icons8.com/color/48/telegram-app--v1.png" />
+            <div class="divider"></div>
+            <span>Telegram</span>
         </a>
         <a href="https://t.me/Dilmurod_Csharp" target="_blank" class="social-btn telegram">
             <img src="https://img.icons8.com/color/48/telegram-app--v1.png" />
-            <span>My Blog</span>
+            <div class="divider"></div>
+            <span>My blog</span>
+        </a>
+        <a href="https://wa.me/998991437101" target="_blank" class="social-btn whatsapp">
+            <img src="https://img.icons8.com/color/48/whatsapp--v1.png" />
+            <div class="divider"></div>
+            <span>WhatsApp</span>
         </a>
     </div>
 
+    <audio id="bg-music" autoplay loop>
+        <source src="audios/legacy.m4a" type="audio/mp4" />
+    </audio>
+
+    <button id="music-toggle" title="Toggle music">
+        <i class="fa-solid fa-volume-high"></i>
+    </button>
+
     <script>
-        document.getElementById('play-voice-btn').addEventListener('click', () => {
-            const msg = new SpeechSynthesisUtterance('Salom! Men Dilmurod, .NET backend dasturchisiman.');
-            msg.lang = 'uz-UZ';
-            window.speechSynthesis.speak(msg);
+        const audio = document.getElementById("bg-music");
+        const toggleBtn = document.getElementById("music-toggle");
+
+        toggleBtn.addEventListener("click", () => {
+            if (audio.paused) {
+                audio.play();
+                toggleBtn.innerHTML = '<i class="fa-solid fa-volume-high"></i>';
+            } else {
+                audio.pause();
+                toggleBtn.innerHTML = '<i class="fa-solid fa-volume-xmark"></i>';
+            }
+        });
+    </script>
+    <script>
+        particlesJS("particles-js", {
+            "particles": {
+                "number": { "value": 60 },
+                "color": { "value": "#ffffff" },
+                "shape": { "type": "circle" },
+                "opacity": {
+                    "value": 0.3,
+                    "random": true
+                },
+                "size": {
+                    "value": 3,
+                    "random": true
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#ffffff",
+                    "opacity": 0.2,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 1,
+                    "direction": "none",
+                    "random": true,
+                    "straight": false
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": { "enable": true, "mode": "grab" },
+                    "onclick": { "enable": true, "mode": "push" }
+                },
+                "modes": {
+                    "grab": { "distance": 140, "line_linked": { "opacity": 0.5 } },
+                    "push": { "particles_nb": 4 }
+                }
+            },
+            "retina_detect": true
         });
     </script>
 </body>
